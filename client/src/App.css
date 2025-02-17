@@ -1,0 +1,265 @@
+body{
+  background-color: #f5f3f3;
+}
+h2{
+  text-align: center;
+  background-color: #fffefe;
+  padding:1%;
+  font-size: larger;
+}
+.bannerText {
+  font-weight: 700;
+  color: red;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.form-container {
+  display: flex;
+  background-color: #ffffff;
+  gap: 20px; 
+  justify-content: space-between;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1900px;
+  max-height: 950px;
+  margin: 20px auto;
+}
+input.error, select.error {
+  border-color: red;
+}
+small {
+  color: red;
+}
+.form1{
+  display: flex; 
+  flex-wrap: wrap;
+} 
+.form-row input,
+.form-row select {
+  flex: 1;                          
+  margin: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-width: 180px;                 
+}
+
+.photo-box {
+  flex: 0 0 25%;
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+label, small {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+}
+input.required, select.required {
+  border-color: red;
+}  
+
+.form-row {
+  display: flex;
+  width:100%;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  position: relative;
+  flex: 1;
+  margin: 5px;
+  min-width: 180px;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+input::placeholder {
+  color: #999; 
+  font-size: 16px;
+  transition: 0.3s ease all;
+  z-index: 1111;
+  position:relative;
+}
+input:focus::placeholder, 
+input:not(:placeholder-shown)::placeholder {
+  color: #070707; 
+  transform: translate(-15px,-16px) scale(0.88);
+  background-color: #fff;
+}
+select:hover {
+border-color: #000000;
+}
+input:hover{
+border-color: #85b4f5;
+}
+@media (max-width: 600px) {
+  .form-container {
+      padding: 20px;
+  }
+
+  .form-row {
+      margin-bottom: 15px; 
+  }
+  
+  .form-row input, .form-row select {
+      font-size: 14px;
+  }
+}
+.form-button {
+background-color: #666; 
+color: rgb(72, 72, 72);
+border: none;
+padding: 12px 20px;
+text-align: center;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px; 
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+.mat-horizontal-stepper-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 65%; /* Shrink the stepper container */
+  margin: 0 auto; /* Center the container */
+}
+
+.mat-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 20px;
+  cursor:default;
+  transition: background-color 0.3s ease;
+}
+.mat-step-header.mat-step-header[aria-selected="true"]:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10px 20px;
+  cursor:pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mat-step-header.active:hover {
+  background-color: #d3d3d3; /* Light grey on hover only if the step is active */
+}
+
+.mat-step-header:not(.active):hover {
+  background-color: transparent; /* No effect for inactive steps */
+}
+
+/* Step icon styling */
+.mat-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc; /* Gray for default state */
+  transition: background-color 0.3s ease;
+  font-weight: bold; /* Bold text inside the circle */
+}
+
+.mat-step-icon.mat-step-icon-state-number {
+  background-color: #6faeed; /* Blue when selected */
+}
+
+.mat-step-icon .mat-step-icon-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mat-step-icon .mat-step-icon-state-number {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.mat-step-icon .FaPencilAlt {
+  font-size: 18px;
+  color: white; /* White color for pencil icon when active */
+}
+
+/* Horizontal line between step icons */
+.mat-horizontal-stepper-header-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 40px; /* Start from the end of the first circle */
+  right: 40px; /* End at the start of the last circle */
+  height: 2px;
+  background-color: #ccc; /* Default line color */
+  z-index: -1;
+}
+
+/* Label styling */
+.mat-step-label {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #060606; /* Grey text by default */
+  transition: color 0.3s ease;
+  background-color: #f5f3f3; /* Add background to avoid overlapping line */
+  padding: 2px 5px; /* Slight padding for better appearance */
+}
+
+.mat-step-label .mat-step-text-label {
+  font-size: 14px;
+  color: #060606;
+}
+
+.mat-step-label:active {
+  background-color: #999;
+}
+
+/* Active/Inactive Step Styling */
+.mat-step-header[aria-selected="false"] .mat-step-icon {
+  background-color: #ccc; /* Grey for inactive step icon */
+}
+
+.mat-step-header[aria-selected="false"] .mat-step-label {
+  color: #ccc; /* Grey text for inactive steps */
+}
+
+.mat-step-header[aria-selected="true"] .mat-step-icon {
+  background-color: #6faeed; /* Blue for active step icon */
+}
+
+.mat-step-header[aria-selected="true"]:hover {
+  background-color: #d3d3d3; /* Active hover effect */
+}
+
+/* For active/inactive states for number or pencil */
+.mat-step-header[aria-selected="true"] .mat-step-icon .mat-step-icon-state-number,
+.mat-step-header[aria-selected="true"] .mat-step-icon .FaPencilAlt {
+  color: white; /* White for active state */
+}
+
+.mat-step-header[aria-selected="false"] .mat-step-icon .mat-step-icon-state-number,
+.mat-step-header[aria-selected="false"] .mat-step-icon .FaPencilAlt {
+  color: #ccc; /* Grey for inactive state */
+}
